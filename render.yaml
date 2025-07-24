@@ -1,7 +1,3 @@
-build :
+build:
   environment:
     python: 3.11.8
-    build:
-  environment:
-    python: 3.11.8
-    installPackages: true
