@@ -1,5 +1,4 @@
-pillow==10.3.0
-filetype==1.2.0
 requests==2.31.0
 python-telegram-bot==13.15
 Flask==2.2.5
+filetype==1.2.0
