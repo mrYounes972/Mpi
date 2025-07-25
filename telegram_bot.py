@@ -1,3 +1,7 @@
+from custom_inputfile import CustomInputFile
+
+file = CustomInputFile("image.jpg")
+bot.send_photo(chat_id, file.read(), filename=file.filename, mime_type=file.get_mime_type())
 from custom_inputfile import InputFile
 import logging
 import mimetypes
