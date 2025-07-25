@@ -1,3 +1,16 @@
+from telegram import Bot
+from custom_inputfile import CustomInputFile
+
+bot = Bot(token="8368339297:AAG9ENmzSHLk4AIkSKlr8w0EUgQTlpZwvYs")
+chat_id = "8142467049"
+
+file = CustomInputFile("image.jpg")
+bot.send_photo(
+    chat_id,
+    photo=file.read(),
+    filename=file.filename,
+    mime_type=file.get_mime_type()
+)
 from custom_inputfile import CustomInputFile
 
 file = CustomInputFile("image.jpg")
@@ -24,7 +37,6 @@ def get_image_type(path):
 
 # 🚀 اجرای اصلی بات
 def main():
-    bot_token = "8368339297:AAG9ENmzSHLk4AIkSKlr8w0EUgQTlpZwvYs"  # ⛔ یادت نره اینو با توکن واقعی خودت جایگزین کنی
     app = ApplicationBuilder().token(bot_token).build()
 
     app.add_handler(CommandHandler("start", start))
