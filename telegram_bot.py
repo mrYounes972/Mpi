@@ -1,3 +1,4 @@
+from custom_inputfile import InputFile
 import logging
 import mimetypes
 from telegram import Update
