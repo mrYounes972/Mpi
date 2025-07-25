@@ -1,13 +1,14 @@
 import mimetypes
 
 class InputFile:
-    def __init__(self, file_path):
-        self.file_path = file_path
-        self.mime_type = mimetypes.guess_type(file_path)[0]
-
-    def read(self):
-        with open(self.file_path, "rb") as f:
-            return f.read()
+    def __init__(self, path):
+        self.path = path
+        self.filename = path.split("/")[-1]
 
     def get_mime_type(self):
-        return self.mime_type or "application/octet-stream"
+        mime_type, _ = mimetypes.guess_type(self.path)
+        return mime_type or "application/octet-stream"
+
+    def read(self):
+        with open(self.path, "rb") as file:
+            return file.read()
